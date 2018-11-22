@@ -1,0 +1,31 @@
+@import '../../component/Methods/calculate.scss';
+@import '../../component/Methods/Setting.scss';
+@import '../../component/Methods/mediaquery.scss';
+
+
+.BannerContainer {
+    @include Size(100%, 84px);
+    @include Position(absolute, false, 0, 0);
+    background: $L-Green;
+    z-index: 3;
+    // margin-top:24px;
+    .BannerShow{
+        @include Size(100%,100%);
+        @include Flex(row, flex-start);
+        .bannerItem{
+            @include Size(100%,100%);
+            flex:0 0 100vw;
+
+        }
+    }
+    .BannerDots{
+        @include Position(absolute,false,false,8px,16px);
+        @include Flex();
+        .dot{
+            @include Size(8px,8px);
+            margin-right:4px;
+            border-radius: 50%;
+            background: #FFF;
+        }
+    }
+}

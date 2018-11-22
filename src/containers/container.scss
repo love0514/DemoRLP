@@ -1,0 +1,77 @@
+@import '../component/Methods/calculate.scss';
+@import '../component/Methods/Setting.scss';
+@import '../component/Methods/mediaquery.scss';
+
+Html,
+body {
+    font-size: $font-size;
+    touch-action: none;
+    margin: 0;
+    height: 100%;
+    width: 100%; // position: fixed;
+    overflow: hidden; //  -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain; // -webkit-user-select:none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+    -ms-tap-highlight-color: rgba(0, 0, 0, 0);
+    -o-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: Helvetica, sans-serif;
+}
+
+
+::-webkit-scrollbar {
+    display: none;
+    width: 0px;
+    height: 0px;
+    background: white;
+}
+
+.container {
+    border-top: 1px solid #c5c5c5
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    // -webkit-padding-end: 20px;
+    // -moz-padding-end: 20px;
+    // -webkit-padding-start: 2px;
+    // -moz-padding-start: 2px;
+    // background-color: #FFF;
+    /* fallback color if gradients are not supported */
+    background: url(/images/ogloba/icons/drop_down_arrow_small__511074.png), rgba(255, 255, 255, 0);
+    /* For Chrome and Safari */
+    background: url(/images/ogloba/icons/drop_down_arrow_small__511074.png), rgba(255, 255, 255, 0);
+    /* For old Fx (3.6 to 15) */
+    background: url(/images/ogloba/icons/drop_down_arrow_small__511074.png), rgba(255, 255, 255, 0);
+    /* For pre-releases of IE 10*/
+    background: url(/images/ogloba/icons/drop_down_arrow_small__511074.png), rgba(255, 255, 255, 0);
+    /* For old Opera (11.1 to 12.0) */
+    background: url(/images/ogloba/icons/drop_down_arrow_small__511074.png), rgba(255, 255, 255, 0);
+    /* Standard syntax; must be last */
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    // border: 1px solid #AAA;
+    // border-radius: 2px;
+    // box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    // color: #555;
+    // font-size: inherit;
+    // margin: 0;
+    // overflow: hidden;
+    // padding-top: 2px;
+    // padding-bottom: 2px;
+    // text-overflow: ellipsis;
+    // white-space: nowrap;
+}

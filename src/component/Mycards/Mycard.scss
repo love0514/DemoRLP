@@ -1,0 +1,94 @@
+@import '../Methods/Setting.scss';
+@import '../Methods/calculate.scss';
+
+@import '../Methods/mediaquery.scss';
+$width:280;
+$height:160;
+
+.Mycard {
+    @include Size (80%, 100%, false, false, false, #{$height}px);
+    @include Flex(row, center, flex-end);
+    @include Position();
+    flex: 0 0 100%;
+    border-radius: 10px;
+    // background: lightblue;
+    text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF;
+    font-family: Helvetica;
+    font-style: normal;
+    margin: 0 2.855%;
+    z-index: 2;
+    overflow: hidden;
+
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+
+    .MycardDetail {
+        @include Size (100%, RelativeSize(47, $height));
+        @include Flex;
+        @include Position;
+        z-index: 1;
+        margin-bottom: RelativeSize(8, $height);
+
+        .BalanceDetail {
+            flex: 0 0 RelativeSize(135, $width);
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            // grid-template-columns: repeat(10, 1fr);
+
+            .CardBalanceTitle {
+                // grid-column: 1/10;
+                flex:0 0 100%;
+                font-size: 1.1rem;
+
+            }
+
+            .CardBalanceCurrency {
+
+                @include Flex(row,flex-start);
+                font-size: 1.25rem;
+                flex:0 0 10%;
+                // grid-column: 1/2;
+                white-space: nowrap;
+            }
+
+            .CardBalance {
+                flex:0 0 70%;
+                // grid-column: 2/10;
+                font-size: 2rem;
+            }
+        }
+
+        .CountDetail {
+            flex: 0 0 RelativeSize(80, $width);
+
+            @include Flex(column);
+
+            .CardCountTitle {
+                font-size: 1.1rem;
+                flex: 0 0 10%;
+                margin-bottom: 5px;
+            }
+
+            .CardCountPercent {
+                font-size: 2rem;
+
+                flex: 0 0 90%;
+
+            }
+        }
+    }
+
+    .CardBalanceTitle {
+        margin-bottom: 5px;
+    }
+}
+
+.Mycard:nth-child(1) {
+    margin-left: 0;
+}

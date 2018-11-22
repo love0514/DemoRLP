@@ -1,0 +1,49 @@
+@import '../../component/Methods/calculate.scss';
+@import '../../component/Methods/Setting.scss';
+@import '../../component/Methods/mediaquery.scss';
+
+
+.CrediteBtn {
+    @include Size(43.5%, 50px);
+    @include Flex(row, space-between);
+    border-radius: 8px;
+    background: #FFF;
+    margin-bottom: 8px;
+
+    .balance {
+        pointer-events: none;
+        margin-left: 16px;
+        font-size: 1.6666rem;
+        color: $L-B4;
+        p{
+            @include Flex();
+            
+        }
+        .currency {
+            font-size: 1rem;
+            margin-left:3px;
+        }
+    }
+
+    .discount {
+        @include Flex(column);
+        pointer-events: none;
+        margin-right: 16px;
+        font-size: 0.8333rem;
+        color: $L-Green;
+
+        .discountAmount {
+            font-size: 1.25rem;
+
+            .currency {
+                font-size: 0.8333rem;
+                font-weight: bold;
+            }
+        }
+    }
+
+}
+
+.CrediteBtn:nth-child(odd) {
+    margin-right: 8px;
+}

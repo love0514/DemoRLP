@@ -1,0 +1,61 @@
+@import '../../component/Methods/calculate.scss';
+@import '../../component/Methods/Setting.scss';
+@import '../../component/Methods/mediaquery.scss';
+
+.AllCardContainer {
+    @include Size(100%, 100%);
+    @include Flex(column, flex-start, center);
+    flex-wrap: wrap;
+    flex: 1;
+
+    .SortBy {
+        @include Flex;
+        @include Size(45%);
+        margin-top: 16px;
+
+        .SortBtn {
+            flex: 0 0 50%;
+            @include Flex(row, center, center);
+            font-size: 1.166rem;
+            white-space: nowrap;
+        }
+
+        .SortBtn:nth-child(1) {
+            padding-right: 4%;
+            justify-content: flex-end;
+            border-right: 1px solid black;
+        }
+
+        .SortBtn:nth-child(2) {
+            padding-left: 4%;
+            justify-content: flex-start
+        }
+    }
+
+    .AllCardContent {
+        @include Size(RelativeSize(328, 375), 100%);
+        @include Flex(row, flex-start);
+        @include Position();
+        margin-top: 28px;
+        flex-wrap: wrap;
+        padding-bottom: 84px;
+
+        .noCard {
+            position: absolute;
+            width: 30%;
+            top: 50%;
+            left: 50%;
+            margin-left: -15%;
+            color: #cfcfcf;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .LoadMore {
+            @include Size(100%, 100%);
+            text-align: center;
+            font-size: 1rem;
+            margin: 24px;
+        }
+    }
+}

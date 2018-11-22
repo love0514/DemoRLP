@@ -1,0 +1,57 @@
+@import '../../component/Methods/calculate.scss';
+@import '../../component/Methods/Setting.scss';
+@import '../../component/Methods/mediaquery.scss';
+
+.HistoryItem {
+    @include Size(100%, 84px);
+    @include Flex();
+    border-top: 1px solid $L-B9;
+
+    .HistoryItemContent {
+        @include Size(85%, 100%);
+        @include Flex();
+        font-size: 1rem;
+
+        .HistoryDetail {
+            @include Size(60%, 100%);
+            @include Flex(column, space-between, flex-start);
+            flex: 0 0 60%;
+            box-sizing: border-box;
+            padding: 16px 0;
+            margin-right: 0.025%;
+
+            .store,
+            .transationDate {
+                color: $L-B8;
+            }
+
+            .transationAmount {
+                font-weight: bold;
+                color: $L-B4;
+            }
+        }
+
+        .HistoryState {
+            @include Size(auto, 100%);
+            @include Flex(column, flex-start, flex-end);
+            flex:1;
+            box-sizing: border-box;
+            padding: 16px 0;
+            white-space: nowrap;
+
+            .transationNum {
+                color: $L-B8;
+            }
+
+            .transationState {
+                font-weight: bold;
+                color: $L-Green;
+                margin-top: 8px;
+            }
+        }
+    }
+}
+
+.HistoryItem:nth-last-child(1) {
+    border-bottom: 1px solid $L-B9;
+}

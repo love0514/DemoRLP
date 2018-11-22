@@ -1,0 +1,38 @@
+@import '../../component/Methods/calculate.scss';
+@import '../../component/Methods/Setting.scss';
+@import '../../component/Methods/mediaquery.scss';
+
+.TextContainer {
+    @include Size(RelativeSize(328, 375), 24px);
+    @include Flex(row, center, center);
+    @include Position();
+    margin: 0 auto;
+    margin-top: 24px;
+
+    .TextTitle {
+        @include Size(280px, 24px);
+        @include Flex();
+        font-size: 1rem;
+        font-weight: bold;
+        color: #444
+    }
+}
+
+.TextIconAfter {
+    @include Size(24px, 24px);
+    // content: '';
+    background: url(/images/ogloba/icons/ico_24_star_transparent.png) 0 0 no-repeat;
+    background-size: contain;
+    z-index: 3;
+    margin-right: 8px;
+    // margin-bottom: -12px;
+}
+
+.TextIconBefore {
+    @include Size(24px, 24px);
+    // content: '';
+    margin-left: 8px;
+    background: url(/images/ogloba/icons/ico_24_home.png) 0 0 no-repeat;
+    background-size: contain;
+    z-index: 3;
+}

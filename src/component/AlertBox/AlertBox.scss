@@ -1,0 +1,70 @@
+@import '../../component/Methods/calculate.scss';
+@import '../../component/Methods/Setting.scss';
+@import '../../component/Methods/mediaquery.scss';
+
+.AlertContainer {
+    @include Size(100vw, 100vh);
+    @include Position(absolute, 0, 0);
+    z-index: -1;
+
+    .coverbg {
+        transform: translateX(-100%);
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        opacity: 0;
+        background: black;
+    }
+
+    .AlertContent {
+        @include Size(320px);
+        @include Position(absolute, 50%, 50%);
+        @include Flex(column, space-between);
+        transform: translateX(-120%);
+        margin-top: -25%;
+        margin-left:-168px;
+        padding:24px 8px 8px 8px;
+        background: #FFF;
+        border-radius: 5px;
+
+        .text {
+            @include Size(90%);
+            margin-bottom: 24px;
+            font-size: 1.166666rem;
+            line-height: 1.9rem;
+            text-align: center;
+        }
+
+        .AlertBtns {
+            @include Size(100%, 47%);
+            @include Flex(row, space-around, flex-end);
+            flex: 0 0 47%;
+            // padding-bottom:5%;
+            // margin-top:10%;
+            font-size: 1.333333rem;
+
+            .Btn {
+                @include Size(148px, 44px);
+                @include Flex();
+                flex: 0 0 48%;
+                color: #FFF;
+                margin-bottom: 1.5%;
+                box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+                // border:1px solid black;
+                border-radius: 3px;
+            }
+
+            .cancel {
+                background: $L-B8;
+            }
+
+            .confirm {
+                background: $L-Green
+            }
+        }
+
+        // border:1px solid black;
+    }
+}

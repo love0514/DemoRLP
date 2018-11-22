@@ -1,0 +1,117 @@
+$pc-media:960px;
+$pcs-media:959px;
+$pad-media:760px;
+$pads-media:759px;
+$phone-media:480px;
+$phones-media:414px;
+// $pc :960;
+// $pad:760;
+// $small-pad:760;
+// $phone:480;
+
+// 回傳當前瀏覽器大小
+// @media screen and (min-width: $pc-media) {
+//     @function Now() {
+//         @return $pc;
+//     }
+// }
+
+// @media all and (min-width: $pad-media) and (max-width: $pcs-media) {
+//     @function Now() {
+//         @return $pad;
+//     }
+// }
+
+// @media all and (min-width: $phone-media) and (max-width:$pads-media) {
+//     @function Now() {
+//         @return $small-pad;
+//     }
+// }
+
+// @media all and (max-width: $phones-media) {
+//     @function Now() {
+//         @return $phone;
+//     }
+// }
+//單個瀏覽器大小下項目修改
+//電腦
+@mixin pc-width() {
+    @media all and (min-width: $pc-media) {
+        @content;
+    }
+}
+
+//平板
+@mixin pad-width() {
+    @media all and (min-width: $pad-media) and (max-width: $pcs-media) {
+        @content;
+    }
+}
+
+//小平板
+@mixin small-pad-width() {
+    @media all and (min-width: $phone-media) and (max-width:$pads-media) {
+        @content;
+    }
+}
+
+//手機
+@mixin phone-width() {
+    @media all and (max-width: $phones-media) {
+        @content;
+    }
+}
+
+// 預設
+@mixin Default($max-width:false, $min-width:false) {
+    max-width: $max-width;
+    min-width: $min-width;
+}
+
+@mixin responsive($target:false, $pc:false, $pad:false, $small-pad:false, $phone:false) {
+    @include pc-width {
+        @if($target==false &&$pc==false&&$pad==false&&$small-pad==false&&$phone==false) {
+            @include Default(false, $pc-media)
+        }
+
+        @else {
+            #{$target}: $pc;
+        }
+    }
+
+    //平板
+    @include pad-width {
+        @if($target==false &&$pc==false&&$pad==false&&$small-pad==false&&$phone==false) {
+            @include Default($pcs-media, $pad-media)
+        }
+
+        @else {
+            #{$target}: $phone;
+        }
+
+    }
+
+    //小平板
+    @include small-pad-width {
+        @if($target==false &&$pc==false&&$pad==false&&$small-pad==false&&$phone==false) {
+            @include Default(false, $phone-media)
+        }
+
+        @else {
+            #{$target}: $phone;
+        }
+
+    }
+
+    //手機
+    @include phone-width() {
+        @if($target==false &&$pc==false&&$pad==false&&$small-pad==false&&$phone==false) {
+            @include Default($phones-media)
+        }
+
+        @else {
+            #{$target}: $phone;
+        }
+
+    }
+}

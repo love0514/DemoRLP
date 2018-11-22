@@ -1,0 +1,25 @@
+// @import './mediaquery.scss';
+
+
+// $nowWidth:Now();
+@function RelativeSize ($target, $relative) {
+    // @include pc-width {
+       
+    // }
+
+    // //平板
+    // @include pad-width {
+      
+    // }
+
+    // //小平板
+    // @include small-pad-width {
+      
+    // }
+
+    // //手機
+    // @include phone-width() {
+
+    // }
+    @return #{$target/$relative*100%}
+}

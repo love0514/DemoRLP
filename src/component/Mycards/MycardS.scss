@@ -1,0 +1,60 @@
+@import '../Methods/Setting.scss';
+@import '../Methods/calculate.scss';
+
+$width:161;
+$height:92;
+
+.MycardS {
+    @include Size (80%, 49%,false, 100%, false, #{$height}px);
+    @include Flex(row, center, flex-end);
+    @include Position();
+    flex: 0 0 49%;
+    border-radius: 10px;
+    // background: lightblue;
+    text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF;
+    font-family: Helvetica;
+    font-style: normal;
+    margin: 1% 0;
+    z-index: 2;
+
+    img {
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        pointer-events: none;
+    }
+
+    .MycardDetail {
+        @include Size (100%, RelativeSize(44, $height));
+        @include Flex;
+        @include Position;
+        z-index: 1;
+        pointer-events: none;
+        // margin-bottom: RelativeSize(16,$height);
+
+        .CountDetail {
+
+            @include Size(100%);
+            @include Flex(column, center, flex-start);
+
+            .CardCountPercent {
+                font-size: 2rem;
+                flex: 0 0 90%;
+                margin-bottom: RelativeSize(8, $height);
+                margin-left: RelativeSize(14, $width)
+            }
+        }
+    }
+
+    .CardBalanceTitle {}
+}
+
+.MycardS:nth-child(even) {
+    margin-left: 1%;
+}
+
+.MycardS:nth-child(odd) {
+    margin-right: 1%;
+}

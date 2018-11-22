@@ -1,0 +1,172 @@
+@import '../../component/Methods/calculate.scss';
+@import '../../component/Methods/Setting.scss';
+@import '../../component/Methods/mediaquery.scss';
+
+.CardDetailContainer {
+    @include Size(100%, 100vh);
+    @include Flex(column, flex-start, center);
+    @include Position();
+
+    background: #F8F8F8;
+
+    .TopUp {
+        @include Size(100%, 50px);
+        @include Flex();
+        @include Position(absolute, false, 0, 0, false);
+        z-index: 3;
+        background: $L-Green;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #FFf;
+    }
+
+    .DetailScroll {
+        @include Size(100%, calc(100vh - 50px));
+        // @include Flex(column, flex-start, center);
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+
+        .CardItem {
+            @include Size(280px);
+            @include Flex();
+            margin: 0 auto;
+            margin-top: 24px;
+        }
+
+        .BarCord {
+            @include Size(100%, 100px);
+            @include Flex(column);
+            margin-top: 24px;
+            text-align: center;
+
+            .reload {
+                font-size: 1.15rem;
+                text-decoration: underline;
+            }
+
+            img {
+                @include Size(70%, 80%);
+                object-fit: cover;
+            }
+
+            p {
+                font-size: 1.667rem;
+                margin-top: 1%;
+            }
+        }
+
+        .Timer {
+            font-size: 1.3333rem;
+            font-weight: bold;
+            color: $L-Green;
+            text-align: center;
+            margin-top: 18px;
+        }
+
+        .CardinfoBox {
+            @include Size(100%);
+            @include Flex(column, flex-start, center);
+            margin-top: 24px;
+
+            .infoType {
+                @include Size(100%, 32px);
+                @include Flex(row, flex-start);
+
+                .infoBtn {
+                    @include Size(124px, 100%);
+                    @include Flex();
+                    font-size: 1rem;
+                    color: #444;
+                    margin-right: 2px;
+                    border-radius: 5px;
+                    background: transparent;
+                }
+
+                .infoBtn:nth-child(2) {
+                    // border-left: 1px solid #cacaca;
+                }
+
+                .infoNonActive {
+                    background: #e0e0e0;
+                    border-bottom: 1px solid #cacaca
+                }
+            }
+
+            .infoContent {
+                @include Size(100%, 100%);
+                @include Flex();
+                margin-bottom: 50px;
+                background: #FFF;
+
+                .ContentText {
+                    @include Size(92%, 100%);
+                    margin: 32px 0;
+                }
+
+                .HistoryContent {
+                    @include Size(100%, 100%);
+                    padding: 32px 0;
+                    overflow-x: hidden;
+
+                    .HistorySortBox {
+                        @include Size(100%, 96px);
+                        @include Flex(column, space-between, center);
+
+                        .SortBox {
+                            @include Size(85%, 44px);
+                            @include Flex(row, center);
+                            @include Position();
+                            border: 1px solid $L-B9;
+                            border-radius: 10px;
+                            box-sizing: border-box;
+
+                            .selectValue {
+                                @include Position();
+                                @include Flex();
+                                z-index: 1;
+                                width: 60%;
+                                border: none;
+                                height: 100%;
+                                // margin-right: 2%;
+                                font-size: 1.1666rem;
+                                font-weight: bold;
+                                text-align-last: center;
+                                text-align: center;
+                                -ms-text-align-last: center;
+                                -moz-text-align-last: center;
+                            }
+
+                            select {
+                                @include Position(absolute);
+                                z-index: 2;
+                                width: 90%;
+                                border: none;
+                                height: 100%;
+                                color: transparent;
+
+                            }
+
+                            select:after {
+                                content: '';
+                                width: 100%;
+                                display: inline-block;
+                            }
+
+                            select:focus {
+                                outline: none;
+                            }
+                        }
+                    }
+
+                    .HistoryList {
+                        @include Size(100%, 100%);
+                        @include Flex(column, flex-start);
+                        margin-top: 16px;
+                    }
+                }
+            }
+
+        }
+    }
+
+}

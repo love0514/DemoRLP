@@ -1,0 +1,130 @@
+@import '../../component/Methods/calculate.scss';
+@import '../../component/Methods/Setting.scss';
+@import '../../component/Methods/mediaquery.scss';
+
+.homepage_container {
+    @include Size(100%, 100%, false, false, false, 100vh);
+    @include responsive();
+    @include Flex(column, flex-start, flex-start);
+    @include Position;
+    // border-top: 1px solid #c5c5c5;
+    -webkit-overflow-scrolling: touch;
+
+    .ScrollBlock {
+        @include Size(100%, calc(100vh - 84px));
+        @include Flex(column);
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        .CardSliderContainer {
+            @include Size(100%, 232px);
+            @include Flex(column, flex-start, flex-start);
+            flex: 0 0 232px;
+            overflow: hidden;
+            background: #F8F8F8;
+
+            .CardSliderTitle {
+                @include Size(100%, RelativeSize(32, 230));
+                @include Flex();
+                flex: 0 0 32px;
+                font-size: 1rem;
+                color: #444;
+            }
+
+            .CardSliderShow {
+                @include Size(100%, 100%);
+                @include Flex(row, flex-start);
+                flex: 1;
+                padding: 0 12.855%;
+                // margin:0 auto
+                // padding-left: calc(10% + 8px);
+                // padding-right: 10%;
+                box-sizing: border-box;
+
+            }
+
+            .CardSliderShow::after {
+                content: '';
+                width: 0;
+                height: 0;
+                padding: 5%;
+            }
+
+            .CardSliderDots {
+                @include Size(100%, 100%);
+                @include Flex();
+                @include Position();
+                flex: 0 0 40px;
+
+                .StickyDots {
+                    @include Flex();
+
+                    .Dot {
+                        @include Size(8px, 8px);
+                        flex: 0 0 8px;
+                        margin: 0 2px;
+                        background: #BDBDBD;
+                        border-radius: 50%;
+                    }
+                }
+
+                .AllCards {
+                    @include Position(absolute, false, false, 14px, 10px)
+                }
+            }
+        }
+
+
+        .HotCardContainer {
+            @include Size(100%, 100%);
+            @include Flex(column, flex-start, center);
+            flex-wrap: wrap;
+            flex: 1;
+
+            .HotCardsContent {
+                @include Size(RelativeSize(328, 375), 100%);
+                @include Flex(row, flex-start);
+                @include Position();
+                flex: 1;
+                // overflow-y: scroll;
+                // overflow-x: hidden;
+                margin-top: 28px;
+                flex-wrap: wrap;
+                padding-bottom: 84px;
+                -webkit-overflow-scrolling: touch;
+
+                .noCard {
+                    position: absolute;
+                    width: 30%;
+                    top: 50%;
+                    left: 50%;
+                    margin-left: -15%;
+                    color: #cfcfcf;
+                    font-size: 18px;
+                    text-align: center;
+                }
+
+                .LoadMore {
+                    @include Size(100%);
+                    text-align: center;
+                    font-size: 1rem;
+                    margin: 24px;
+                    // padding-bottom:24px;
+                }
+            }
+
+            .HotCardsContent::after {
+                content: '';
+                width: 0;
+                height: 0;
+                padding: 5%;
+            }
+
+        }
+    }
+
+    .fixBanner {
+        height: 84px;
+        flex: 0 0 84px
+    }
+}
