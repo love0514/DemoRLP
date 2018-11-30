@@ -52,7 +52,7 @@ module.exports = {
             }
         }
         ,
-        host: "192.168.1.161",
+        // host: "192.168.1.161",
         // https:true,
         inline: true,
         port: 8000,
